@@ -1,6 +1,6 @@
 package org.gowtham;
 
-import org.gowtham.behaviors.FlyRocketPowered;
+import org.gowtham.behaviors.*;
 import org.gowtham.parents.Duck;
 import org.gowtham.subclasses.*;
 
@@ -14,7 +14,12 @@ public class Main
 
         Duck model = new ModelDuck();
         model.performFly();
+        model.performQuack();
+
+        /* Dynamically setting the Duck behavior */
         model.setFlyBehavior(new FlyRocketPowered());
+        model.setQuackBehavior(new MuteQuack());
         model.performFly();
+        model.performQuack();
     }
 }
